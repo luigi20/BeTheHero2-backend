@@ -29,7 +29,6 @@ module.exports = {
             if (!ong) {
                 return res.status(404).send({ Error: "You are not authorized to access this application." });
             }
-            console.log(ong);
             const [id] = await connection('incidents').insert({
                 title,
                 description,
@@ -38,7 +37,7 @@ module.exports = {
             })
             return res.json({ id });
         } catch (error) {
-            res.status(400).send({ error: "Registration Failed" })
+            res.status(400).send({ error: "Registration " })
         }
     },
 
