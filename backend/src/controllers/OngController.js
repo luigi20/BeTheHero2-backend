@@ -23,6 +23,7 @@ module.exports = {
 
     async create(req, res) {
         const { name, email, whatsapp, city, uf } = req.body;
+        console.log(city);
         try {
             if (await connection('ongs').where('email', email).first()) {
                 return res.status(400).send({ Error: "ONG Already Exists" })
