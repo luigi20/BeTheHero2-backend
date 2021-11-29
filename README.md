@@ -1,7 +1,5 @@
 # BeTheHero2-backend
 
- ![Be The Hero](/frontend/src/assets/logo.svg)
-
 
 ## Repositorio da semana 11 omnistack
 
