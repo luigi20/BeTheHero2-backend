@@ -3,7 +3,6 @@ const connection = require('../database/connection');
 module.exports = {
 
     async index(req, res) {
-
         const { page = 1 } = req.query;
         const [count] = await connection('incidents').count();
         const incidents = await connection('incidents')
@@ -29,13 +28,13 @@ module.exports = {
             if (!ong) {
                 return res.status(404).send({ Error: "You are not authorized to access this application." });
             }
-            const [id] = await connection('incidents').insert({
+            await connection('incidents').insert({
                 title,
                 description,
                 value,
                 ong_id
-            })
-            return res.json({ id });
+            });
+            return res.status(200).send();
         } catch (error) {
             res.status(400).send({ error: "Registration Failed" })
         }
