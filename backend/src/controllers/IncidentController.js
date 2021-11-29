@@ -37,7 +37,7 @@ module.exports = {
             })
             return res.json({ id });
         } catch (error) {
-            res.status(400).send({ error: "Registration " })
+            res.status(400).send({ error: "Registration Failed" })
         }
     },
 
@@ -100,6 +100,6 @@ module.exports = {
 
 async function token(token, ong_id) {
     const ong = await connection('ongs').
-        where('token', '=', token).where('id', '=', ong_id);
+        where('token', token).where('id', ong_id);
     return ong;
 }

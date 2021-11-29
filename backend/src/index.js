@@ -4,7 +4,7 @@ const cors = require('cors');
 const routes = require('./routes');
 const app = express();
 
-app.use(cors({ origin: 'https://bethehero2021-frontend.herokuapp.com' }));
+app.use(cors({ origin: process.env.FRONT }));
 /*
     Tipos de parametros
     Query Param : Parametros nomeados enviados na rota após "?"
