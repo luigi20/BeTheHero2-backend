@@ -15,7 +15,7 @@ module.exports = {
                 'ongs.email',
                 'ongs.whatsapp',
                 'ongs.city',
-                'ongs.uf']);
+                'ongs.uf']).orderby('id');
         res.header('X-Total-Count', count['count(*)']);
         return res.json(incidents);
     },
